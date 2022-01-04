@@ -13,7 +13,7 @@ var p1 = {
 update();
 
 window.addEventListener("keydown", keydownHandler);
-
+window.addEventListener("keyup", keyupHandler, false);
 
 function keydownHandler(e){
     var key = e.keyCode;
@@ -28,6 +28,22 @@ function keydownHandler(e){
     }
     if(key === DOWN && key !== UP){
         moveBaixo = true;
+    }
+}
+
+function keyupHandler(e){
+    var key = e.keyCode;
+    if(key === LEFT && key !== RIGHT){
+        moveEsquerda = false;
+    }
+    if(key === RIGHT && key !== LEFT){
+        moveDireita = false;
+    }
+    if(key === UP && key !== DOWN){
+        moveCima = false;
+    }
+    if(key === DOWN && key !== UP){
+        moveBaixo = false;
     }
 }
 
