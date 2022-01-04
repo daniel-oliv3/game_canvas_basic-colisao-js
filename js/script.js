@@ -70,6 +70,7 @@ function update(){
 
 function draw(){
     ctx.clearRect(0, 0, cnv.width, cnv.height);
+    ctx.fillStyle = objColor;
     ctx.fillRect(posX, posY, SIZE, SIZE);
 }
 
