@@ -8,6 +8,9 @@ var posX = 50;
 var posY = 50;
 var objColor = "#00f";
 
+var blockX = cnv.width/2 - 25;
+var blockY = cnv.height/2 - 25;
+
 var mvLeft = mvUp = mvRight = mvDown = false;
 
 function updateBlock(){
@@ -70,6 +73,8 @@ function update(){
 
 function draw(){
     ctx.clearRect(0, 0, cnv.width, cnv.height);
+    ctx.fillStyle = "#000";
+    ctx.fillRect(blockX, blockY, SIZE, SIZE);
     ctx.fillStyle = objColor;
     ctx.fillRect(posX, posY, SIZE, SIZE);
 }
