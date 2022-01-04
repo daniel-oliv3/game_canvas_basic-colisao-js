@@ -1,7 +1,11 @@
 var cnv = document.querySelector("canvas");
 var ctx = cnv.getContext("2d");
 
+window.addEventListener("keydown", keydownHandler, false);
 
+function keydownHandler(e){
+    alert(e.keyCode);
+}
 
 function update(){
     
