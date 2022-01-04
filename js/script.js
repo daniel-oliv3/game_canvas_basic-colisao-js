@@ -28,6 +28,14 @@ function updateBlock(){
     }
 }
 
+function colide(){
+    if(posX + SIZE > blockX && posX < blockX + SIZE && posY + SIZE > blockY && posY < blockY + SIZE){
+        objColor = "#f00";
+    }else {
+        objColor = "#00f";
+    }
+}
+
 window.addEventListener("keydown", keydownHandler, false);
 window.addEventListener("keyup", keyupHandler, false);
 
@@ -69,6 +77,7 @@ function keydownHandler(e){
 
 function update(){
     updateBlock();
+    colide();
 }
 
 function draw(){
