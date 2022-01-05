@@ -1,3 +1,0 @@
-function testeColl(){
-    alart('ok');
-}
