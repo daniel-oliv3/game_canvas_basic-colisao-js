@@ -16,7 +16,7 @@
 
     //Objstos Personagem
     var character = new Sprite(50, 175, 50, 50, "#00f");
-    character.speed = 2;
+    character.speed = 4;
     sprites.push(character);
 
     var block1 = new Sprite(500, 100, 50, 50, "#f00");
@@ -84,6 +84,12 @@
         if(mvDown && !mvUp){
             character.posY += character.speed;
         }
+        //Limites da tela
+        character.posX = Math.max(0, Math.min(cnv.width - character.width, character.posX));
+        character.posY = Math.max(0, Math.min(cnv.height - character.height, character.posY));
+
+        //Colisões
+        
     }
 
 
