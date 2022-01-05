@@ -9,24 +9,30 @@
     //Movimentos
     var mvLeft = mvUp = mvRight = mvDown = false;
 
-
     //Arrays
     var sprites = [];
     var blocks = [];
 
-    //Objstos Personagem
+    //Objetos instanciados com os seguintes parâmetros: posX, posY, Largura, Altura e cor
     var character = new Sprite(50, 175, 50, 50, "#00f");
     character.speed = 4;
     sprites.push(character);
 
     var block1 = new Sprite(500, 100, 50, 50, "#f00");
     sprites.push(block1);
+    blocks.push(block1);
 
     var block2 = new Sprite(200, 300, 100, 50, "#8B6914");
     sprites.push(block2);
+    blocks.push(block2);
+
+    var block3 = new Sprite(50, 100, 20, 150, "#7F7F7F");
+	sprites.push(block3);
+	blocks.push(block3);
 
 
     //Entradas
+    //Evento disparado quando uma tecla é pressionada
     window.addEventListener("keydown", function(e){
         var key = e.keyCode;
         switch(key){
@@ -45,6 +51,7 @@
         }
     }, false);
 
+    //Evento disparado quando uma tecla é solta
     window.addEventListener("keyup", function(e){
         var key = e.keyCode;
         switch(key){
@@ -70,7 +77,7 @@
         render();
     }
 
-
+    //Atualizações
     function update(){
         if(mvLeft && !mvRight){
             character.posX -= character.speed;
@@ -92,7 +99,7 @@
         for(var i in blocks){
 			var blk = blocks[i];
 			if(blk.visible){
-				blockRect(blk,character);
+				blockRect(blk, character);
 			}
 		}
     }
