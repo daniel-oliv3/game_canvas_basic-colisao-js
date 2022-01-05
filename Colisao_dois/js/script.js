@@ -89,10 +89,15 @@
         character.posY = Math.max(0, Math.min(cnv.height - character.height, character.posY));
 
         //Colisões
-        
+        for(var i in blocks){
+			var blk = blocks[i];
+			if(blk.visible){
+				blockRect(blk,character);
+			}
+		}
     }
 
-
+    //Renderização ou desenho na tela
     function render(){
         ctx.clearRect(0, 0, cnv.width, cnv.height);
         for(var i in sprites){
@@ -103,24 +108,5 @@
             }
         }
     }
-
     loop();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }());
